@@ -5,7 +5,7 @@
 #include <iostream>
 #include <string>
 #include <valarray>
-
+namespace private_inheritance{
 //从两个基类派生出来
 class Student : private std::string, private std::valarray<double> {
 private:
@@ -39,5 +39,8 @@ public:
     friend std::istream & getline(std::istream & is, Student & stu);
     friend std::ostream & operator<<(std::ostream & os, const Student & stu);
 };
+
+}
+
 
 #endif

@@ -5,7 +5,7 @@
 #include <iostream>
 #include <string>
 #include <valarray>
-
+namespace containment{
 class Student {
 private:
     typedef std::valarray<double> ArrayDb;
@@ -27,7 +27,7 @@ public:
     ~Student() {}
     
     double Average() const;
-    const double & size()const{return scores.size();};
+    const double size()const{return scores.size();};//返回的是一个临时值
     const std::string & Name() const { return name; }
     double & operator[](int i);
     double operator[](int i) const;
@@ -37,5 +37,6 @@ public:
     friend std::istream & getline(std::istream & is, Student & stu);
     friend std::ostream & operator<<(std::ostream & os, const Student & stu);
 };
+}
 
 #endif

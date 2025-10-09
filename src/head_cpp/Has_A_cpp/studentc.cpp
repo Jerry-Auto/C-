@@ -5,7 +5,7 @@ using std::ostream;
 using std::endl;
 using std::istream;
 using std::string;
-
+namespace containment{
 // 私有方法：输出分数
 ostream & Student::arr_out(ostream & os) const {
     int i;
@@ -62,4 +62,5 @@ ostream & operator<<(ostream & os, const Student & stu) {
     os << "Scores for " << stu.name << ":\n";
     stu.arr_out(os);
     return os;
+}
 }

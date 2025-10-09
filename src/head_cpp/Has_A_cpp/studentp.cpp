@@ -5,6 +5,7 @@ using std::ostream;
 using std::endl;
 using std::istream;
 using std::string;
+namespace private_inheritance{
 
 // 私有方法：输出分数
 ostream & Student::arr_out(ostream & os) const {
@@ -49,4 +50,6 @@ ostream & operator<<(ostream & os, const Student & stu) {
     os << "Scores for " << (const string &)stu << ":\n";
     stu.arr_out(os);
     return os;
+}
+
 }

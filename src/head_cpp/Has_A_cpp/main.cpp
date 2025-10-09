@@ -1,9 +1,11 @@
 // use_student.cpp -- test the Student classes
 #include <iostream>
-#include "studentc.h"  // 或者 #include "studentp.h"
+#include "studentc.h"  
+#include "studentp.h"   
+using private_inheritance::Student;
+//using containment::Student;
 
 const int NUM = 3;
-
 int main() {
     using std::cin;
     using std::cout;
