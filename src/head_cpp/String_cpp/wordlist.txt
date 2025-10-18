@@ -1,0 +1,12 @@
+hello
+world
+C++
+Primer
+string
+algorithm
+memory
+capacity
+reserve
+shrink
+to
+fit
