@@ -6,7 +6,7 @@
 #include <algorithm>
 #include <functional>
 #include"functor.h"
-
+#include<string>
 // 输出整数的函数
 void outint(int n) {std::cout << n << " ";}
 
@@ -248,8 +248,17 @@ void function_adaptor(){
     
     // 方法A: 函数适配器组合（适合简单条件）
     auto isJunior = std::not_fn(std::mem_fn(&Employee::isSenior));
-    auto activeJunior = std::bind(std::logical_and<bool>(),
-                                 isActive, isJunior);
+    using namespace std::placeholders;
+
+    auto activeJunior = std::bind(
+
+        std::logical_and<bool>(),
+
+        std::bind(std::mem_fn(&Employee::isActive), _1),  // 第一个条件
+
+        std::bind(std::not_fn(std::mem_fn(&Employee::isSenior)), _1)  // 第二个条件
+
+    );
     
     int juniorCount = std::count_if(employees.begin(), employees.end(),
                                    [&](const auto& emp) { return activeJunior(*emp); });

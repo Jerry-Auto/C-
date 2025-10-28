@@ -1,4 +1,7 @@
+#pragma once
 #include <functional>
+#include<string>
+#include <iostream>
 
 
 template<class T>  // 函数对象类(函数符)定义了operator()()
@@ -26,7 +29,7 @@ public:
 
 
 // 一个普通函数
-int add(int a, int b) {
+ int inline add(int a, int b) {
     return a + b;
 }
 
